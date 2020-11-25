@@ -22,6 +22,12 @@ namespace NullableFunctional
             return nullable != null ? transformation(nullable) : null;
         }
 
+        public static TOut SelectOrElse<TIn, TOut>(this TIn nullable, Func<TIn, TOut> transformation, TOut option)
+            where TIn : class where TOut : class
+        {
+            return nullable != null ? transformation(nullable) : option;
+        }
+
         public static T Where<T>(this T nullable, Func<T, bool> query) where T : class
         {
             return nullable != null && query(nullable) ? nullable : null;

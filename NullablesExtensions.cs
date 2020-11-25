@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace NullableFunctional
 {
-    public static class Extensions
+    public static class NullablesExtensions
     {
         public static T? Do<T>(this T? nullable, Action<T> action) where T : struct
         {
